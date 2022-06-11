@@ -1,0 +1,14 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.02);
+  width: 100vw;
+  height: 60px;
+  font-size: 14px;
+
+  &__strong {
+    font-weight: 600;
+  }
+}
