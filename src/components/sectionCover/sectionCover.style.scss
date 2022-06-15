@@ -1,0 +1,42 @@
+.SectionCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 300px 0;
+  gap: 128px;
+
+  &__imageText {
+    background-color: var(--off-white);
+  }
+
+  &__scrollButtom {
+    background-color: var(--off-white);
+    cursor: pointer;
+    border: none;
+
+    img {
+      mix-blend-mode: difference;
+      opacity: 0.85;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &__scrollButtom {
+      animation: pulse infinite 1s linear;
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
