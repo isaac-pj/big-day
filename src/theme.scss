@@ -11,6 +11,11 @@
   --brown-mid: #936037;
   --white: #ffffff;
 
+  @font-face {
+    font-family: "Integral CF";
+    src: url("src/assets/fonts/IntegralCF/IntegralCF-Regular.oft") format("oft");
+  }
+
   .white {
     background-color: var(--white);
   }
@@ -66,4 +71,15 @@ body {
   }
   box-sizing: border-box;
   overflow-x: hidden;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    background-color: var(--off-white);
+  }
 }
