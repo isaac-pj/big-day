@@ -1,15 +1,19 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import {
   COLOR_PALLETE,
   COLOR_PALLETE_STYLE,
   PALLETE,
 } from "../../constants/general";
+import Toast from "../toast/toast";
 import "./colorPallete.style.scss";
 
 const ColorPallete = (props, ref) => {
+  const toastRef = useRef(null);
+
   const handleClickColor = (event, { HEX, CMYK, NAME }) => {
     const color = `${NAME}: HEX: (${HEX}) CMYK: (${CMYK})`;
     navigator.clipboard.writeText(color);
+    toastRef.current.showToast(3000);
     // console.log("copy to clipboard");
   };
 
@@ -44,6 +48,11 @@ const ColorPallete = (props, ref) => {
           <span className="ColorPallete__date">30 de Julho, 2022</span>
         </span>
       </div>
+      <Toast
+        ref={toastRef}
+        message=":) A cor foi copiada com sucesso!"
+        timeout={3000}
+      />
     </div>
   );
 };

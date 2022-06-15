@@ -1,0 +1,25 @@
+.Toast {
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &__inner {
+    border-radius: 30px;
+    color: var(--white);
+    background-color: #333333dd;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 16px 32px;
+  }
+}
+
+.Toast.hide {
+  transform: translateY(150px);
+}
