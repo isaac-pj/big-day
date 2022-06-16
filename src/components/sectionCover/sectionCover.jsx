@@ -1,14 +1,17 @@
 import React from "react";
-import Section from "../section/section";
 import "./sectionCover.style.scss";
+import Section from "../section/section";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 const SectionCover = () => {
   const handleScrollClick = () => {
-    console.log("scroll to next section");
+    gsap.to(window, { duration: 1, scrollTo: "#colors" });
   };
 
   return (
-    <Section>
+    <Section id="cover">
       <div className="SectionCover">
         <img
           className="SectionCover__imageText"

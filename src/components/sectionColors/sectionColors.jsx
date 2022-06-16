@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import { BUTTON_TYPES } from "../../constants/general";
 import Button from "../button/button";
 import ColorPallete from "../colorPallete/colorPallete";
@@ -10,12 +10,11 @@ const SectionColors = () => {
   const colorPalleteRef = useRef(null);
 
   const handleOnClick = (event, { current }) => {
-    // console.log(current);
     printJS("src/assets/docs/pallete.pdf");
   };
 
   return (
-    <Section title="Cores">
+    <Section title="Cores" id="colors">
       <div className="SectionColors">
         <ColorPallete ref={colorPalleteRef} />
         <div className="SectionColors__bottomContent">

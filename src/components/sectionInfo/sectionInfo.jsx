@@ -26,7 +26,7 @@ const handleOnClick = (url) => {
 
 const SectionInfo = () => {
   return (
-    <Section title="Informações">
+    <Section title="Informações" id="info">
       <div className="SectionInfo">
         <p className="SectionInfo__text">
           Por favor, chegar com <strong>30 min</strong> de antecedencia.

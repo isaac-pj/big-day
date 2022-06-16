@@ -36,11 +36,14 @@ const SectionDate = () => {
   }, [bigDay]);
 
   const handleAddToCalendar = useCallback(() => {
-    console.log("add to calendar");
+    // console.log("add to calendar");
+    alert(
+      "Sinto muito, você acabou de se desqualificar como padrinho! :) Brinks, mas decore a data por favor, vamos saber disso rsrsrs."
+    );
   }, []);
 
   return (
-    <Section title="Data e Hora">
+    <Section title="Data e Hora" id="date">
       <div className="SectionDate">
         <Calendar bigDay={bigDay} />
         <div className="SectionDate__bottomContent">
