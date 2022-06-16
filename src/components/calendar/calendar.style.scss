@@ -86,4 +86,14 @@
     top: -20px;
     text-transform: uppercase;
   }
+
+  &__hours {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+    transform: rotateZ(-45deg);
+    color: #4169e1;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 36px;
+  }
 }

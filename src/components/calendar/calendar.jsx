@@ -10,6 +10,7 @@ const Calendar = ({ bigDay }) => {
   const day = format(currentDate, "dd");
   const month = format(currentDate, "MMMM", { locale: ptBR });
   const year = format(currentDate, "yyyy");
+  const time = format(bigDay, "HH:mm");
 
   useEffect(() => {
     const intervalId = rollDate();
@@ -45,6 +46,7 @@ const Calendar = ({ bigDay }) => {
       <div className="Calendar__inner">
         <span className="Calendar__day">{day}</span>
       </div>
+      <span className="Calendar__hours">{time}hs</span>
     </div>
   );
 };
