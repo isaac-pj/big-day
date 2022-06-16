@@ -1,4 +1,5 @@
 import React from "react";
+import "./main.style.scss";
 import Button from "../../components/button/button";
 import Footer from "../../components/footer/footer";
 import Section from "../../components/section/section";
@@ -9,15 +10,13 @@ import SectionColors from "../../components/sectionColors/SectionColors";
 import SectionInfo from "../../components/sectionInfo/sectionInfo";
 import SectionDate from "../../components/sectionDate/sectionDate";
 import SectionCover from "../../components/sectionCover/sectionCover";
-import "./main.style.scss";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 const MainPage = () => {
-  const _renderCoverSection = () => {
-    return <SectionCover />;
-  };
-
-  const _renderColorsSection = () => {
-    return <SectionColors />;
+  const handleGoTop = () => {
+    gsap.to(window, { duration: 2, scrollTo: 0 });
   };
 
   const _renderClothesSubsection = (data) => {
@@ -30,26 +29,14 @@ const MainPage = () => {
     ));
   };
 
-  const _renderDateSection = () => {
-    return <SectionDate />;
-  };
-
-  const _renderInfoSection = () => {
-    return <SectionInfo />;
-  };
-
-  const handleGoTop = () => {
-    console.log("go to top");
-  };
-
   return (
     <div className="MainPage">
       <div className="MainPage__content">
-        {_renderCoverSection()}
-        {_renderColorsSection()}
+        <SectionCover />
+        <SectionColors />
         {_renderClothesSection(content)}
-        {_renderDateSection()}
-        {_renderInfoSection()}
+        <SectionDate />
+        <SectionInfo />
         <Button
           type={BUTTON_TYPES.FAB}
           onClick={handleGoTop}
