@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+
+.FloatImage {
+  position: absolute;
+  max-width: 60%;
+  z-index: 999;
+}
+
+.FloatImage.reverse {
+  transform: rotateZ(180deg);
+}
+
+@include sm {
+  .FloatImage {
+    max-width: 100%;
+  }
+}

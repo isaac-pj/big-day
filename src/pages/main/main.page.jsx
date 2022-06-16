@@ -12,9 +12,13 @@ import SectionDate from "../../components/sectionDate/sectionDate";
 import SectionCover from "../../components/sectionCover/sectionCover";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import FloatImage from "../../components/floatImage/floatImage";
+import useIsMobile from "../../hooks/useIsMobile";
 gsap.registerPlugin(ScrollToPlugin);
 
 const MainPage = () => {
+  const isMobile = useIsMobile();
+
   const handleGoTop = () => {
     gsap.to(window, { duration: 2, scrollTo: 0 });
   };
@@ -32,6 +36,8 @@ const MainPage = () => {
   return (
     <div className="MainPage">
       <div className="MainPage__content">
+        {!isMobile && <FloatImage top={-300} right={-300} />}
+        {isMobile && <FloatImage top={-100} right={-100} />}
         <SectionCover />
         <SectionColors />
         {_renderClothesSection(content)}
