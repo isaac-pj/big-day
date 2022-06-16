@@ -1,11 +1,11 @@
-import { addDays, isBefore, subDays } from "date-fns";
+import { addDays, isBefore } from "date-fns";
 import { format } from "date-fns/esm";
 import ptBR from "date-fns/locale/pt-BR";
 import React, { memo, useEffect, useState } from "react";
 import "./calendar.style.scss";
 
 const Calendar = ({ bigDay }) => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date().setHours(16));
 
   const day = format(currentDate, "dd");
   const month = format(currentDate, "MMMM", { locale: ptBR });
