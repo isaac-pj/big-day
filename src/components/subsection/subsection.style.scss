@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .Subsection {
   // background-color: violet;
   display: flex;
@@ -23,6 +25,7 @@
     line-height: 59px;
     text-transform: uppercase;
     color: var(--green-dark);
+    white-space: pre-wrap;
   }
 
   &__description {
@@ -67,5 +70,70 @@
   &__buttons {
     display: flex;
     gap: 16px;
+  }
+}
+
+.Subsection.reverse {
+  flex-direction: row-reverse;
+}
+
+@include sm {
+  .Subsection {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 50px 0px;
+
+    &__image {
+      width: 80%;
+    }
+
+    &__info {
+      max-width: 100vw;
+      width: 100%;
+      padding-top: 50px;
+      gap: 32px;
+      align-items: center;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: initial;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 18px;
+      line-height: initial;
+      text-align: center;
+    }
+
+    &__alert {
+      height: unset;
+      display: block;
+      text-align: center;
+      font-style: italic;
+      font-size: 14px;
+      line-height: initial;
+    }
+
+    &__colors {
+      gap: 10px;
+    }
+
+    &__colorCodes {
+      gap: 4px;
+
+      h4 {
+        font-size: 16px;
+        line-height: initial;
+      }
+    }
+
+    &__color {
+      width: 45px;
+      height: 45px;
+      border-width: 8px;
+      border-radius: 16px;
+    }
   }
 }

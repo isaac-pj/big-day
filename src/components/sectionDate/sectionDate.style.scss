@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .SectionDate {
   display: flex;
   flex-direction: column;
@@ -24,6 +26,14 @@
 
     strong {
       font-weight: 700;
+    }
+  }
+}
+
+@include sm {
+  .SectionDate {
+    &__text {
+      font-size: 24px;
     }
   }
 }

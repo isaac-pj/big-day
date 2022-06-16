@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .SectionCover {
   display: flex;
   flex-direction: column;
@@ -38,6 +40,35 @@
     }
     to {
       transform: scale(1);
+    }
+  }
+}
+
+@include sm {
+  .SectionCover {
+    box-sizing: border-box;
+    padding: 20px 0;
+    gap: 20px;
+
+    &__imageText {
+      width: 100%;
+    }
+
+    &__scrollButtom {
+      position: absolute;
+      bottom: 100px;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(0.7);
+      }
+      50% {
+        transform: scale(0.8);
+      }
+      to {
+        transform: scale(0.7);
+      }
     }
   }
 }

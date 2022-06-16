@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .Button {
   background-color: var(--green-dark);
   color: white;
@@ -41,4 +43,9 @@
   bottom: 32px;
   border-radius: 28px;
   // zoom: 1.33;
+
+  @include sm {
+    right: 16px;
+    bottom: 16px;
+  }
 }
