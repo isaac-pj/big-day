@@ -47,7 +47,7 @@ export default Object.freeze([
     title: 'Madrinhas',
     content: [
       {
-        title: 'Vestido verde escuro',
+        title: 'Vestido \nverde escuro',
         description: 'Vestido longo com ou sem manga',
         alert: 'Evitar decotes e fendas muito grandes',
         colors: {
@@ -65,7 +65,7 @@ export default Object.freeze([
     title: 'Damas',
     content: [
       {
-        title: 'Vestido verde claro',
+        title: 'Vestido \nverde claro',
         description: 'Vestido médio com ou sem manga',
         alert: 'Evitar decotes e fendas muito grandes',
         colors: {

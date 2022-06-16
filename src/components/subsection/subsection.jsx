@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./subsection.style.scss";
 import classNames from "classnames";
 import Button from "../button/button";
+import useIsMobile from "../../hooks/useIsMobile";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -14,6 +15,7 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const infoRef = useRef(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const imageElem = imageRef.current;
@@ -21,8 +23,10 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
     const containerElem = containerRef.current;
     const reverse = JSON.parse(infoElem?.dataset?.reverse);
 
-    animations.scaleUp(gsap, imageElem, containerElem);
-    animations.slideIn(gsap, infoElem, containerElem, { reverse });
+    animations.scaleUp(gsap, imageElem, isMobile ? imageElem : containerElem);
+    animations.slideIn(gsap, infoElem, isMobile ? infoElem : containerElem, {
+      reverse,
+    });
   }, []);
 
   const handleCopyColor = (event, { name, hex, cmyk }) => {
@@ -38,9 +42,8 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
   return (
     <div
       ref={containerRef}
-      className="Subsection"
+      className={classNames("Subsection", { reverse: reverse })}
       title={title}
-      style={{ flexDirection: reverse ? "row-reverse" : "row" }}
     >
       <img
         ref={imageRef}
