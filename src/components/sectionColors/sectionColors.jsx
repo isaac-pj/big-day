@@ -19,8 +19,8 @@ const SectionColors = () => {
         <ColorPallete ref={colorPalleteRef} />
         <div className="SectionColors__bottomContent">
           <p className="SectionColors__text">
-            As cores escolhidas para comopor a identidade visual foram tons
-            frios e pouco saturados inspiradas na natureza do local, criando uma
+            As cores escolhidas para compor a identidade visual foram tons frios
+            e pouco saturados inspiradas na natureza do local, criando uma
             harmonia com a paisagem, e mantendo o contraste necessário.
           </p>
           <Button
