@@ -35,7 +35,7 @@ export default [
         left: -800,
       },
       mobile: {
-        top: 650,
+        top: 550,
         right: 'unset',
         bottom: 'unset',
         left: -350,
