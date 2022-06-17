@@ -18,25 +18,11 @@ const SectionCover = () => {
     <Section id="cover">
       <div className="SectionCover">
         <div className="SectionCover__imageFrame">
-          {isMobile && (
-            <img
-              className="SectionCover__imageTextBackOne"
-              src="src/assets/images/cover.svg"
-              alt="image back part one"
-            />
-          )}
           <img
-            className="SectionCover__imageTextBackTwo"
+            className="SectionCover__imageTextBack"
             src="src/assets/images/cover.svg"
-            alt="image back part two"
+            alt="image back"
           />
-          {isMobile && (
-            <img
-              className="SectionCover__imageTextBackThree"
-              src="src/assets/images/cover.svg"
-              alt="image back part three"
-            />
-          )}
           <img
             className="SectionCover__imageText"
             src="src/assets/images/cover.svg"
