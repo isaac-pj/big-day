@@ -1,16 +1,22 @@
 import React, { useRef } from "react";
+import "./sectionColors.style.scss";
 import { BUTTON_TYPES } from "../../constants/general";
 import Button from "../../components/button/button";
 import ColorPallete from "../../components/colorPallete/colorPallete";
 import Section from "../../components/section/section";
+import useIsMobile from "../../hooks/useIsMobile";
 import printJS from "print-js";
-import "./sectionColors.style.scss";
 
 const SectionColors = () => {
+  const isMobile = useIsMobile();
   const colorPalleteRef = useRef(null);
 
-  const handleOnClick = (event, { current }) => {
+  const handlePrintClick = (event, { current }) => {
     printJS("src/assets/docs/pallete.pdf");
+  };
+
+  const handleSaveClick = (event, { current }) => {
+    window.open("src/assets/docs/pallete.pdf", "_blank");
   };
 
   return (
@@ -23,11 +29,20 @@ const SectionColors = () => {
             e pouco saturados inspiradas na natureza do local, criando uma
             harmonia com a paisagem, e mantendo o contraste necessário.
           </p>
-          <Button
-            type={BUTTON_TYPES.RAISED}
-            text="Imprimir Paleta"
-            onClick={(event) => handleOnClick(event, colorPalleteRef)}
-          />
+          {!isMobile && (
+            <Button
+              type={BUTTON_TYPES.RAISED}
+              text="Imprimir Paleta"
+              onClick={(event) => handlePrintClick(event, colorPalleteRef)}
+            />
+          )}
+          {isMobile && (
+            <Button
+              type={BUTTON_TYPES.RAISED}
+              text="Salvar PDF"
+              onClick={(event) => handleSaveClick(event, colorPalleteRef)}
+            />
+          )}
         </div>
       </div>
     </Section>
