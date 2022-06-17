@@ -1,17 +1,17 @@
 @import "../../styles/mixins.scss";
 
-.FloatImage {
+.FloatLeaf {
   position: absolute;
   max-width: 60%;
   z-index: 999;
 }
 
-.FloatImage.reverse {
+.FloatLeaf.reverse {
   transform: rotateZ(180deg);
 }
 
 @include sm {
-  .FloatImage {
-    max-width: 100%;
+  .FloatLeaf {
+    max-width: 120%;
   }
 }
