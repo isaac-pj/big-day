@@ -1,5 +1,6 @@
 export default Object.freeze([
   {
+    key: 0,
     title: 'Padrinhos',
     content: [
       {
@@ -14,6 +15,7 @@ export default Object.freeze([
         },
         image: 'src/assets/images/clothes/white-shirt.png',
         reverse: false,
+        key: 0,
       },
       {
         title: 'Calça Cinza',
@@ -27,6 +29,7 @@ export default Object.freeze([
         },
         image: 'src/assets/images/clothes/gray-pants.png',
         reverse: true,
+        key: 1,
       },
       {
         title: 'Sapato Marrom',
@@ -40,10 +43,12 @@ export default Object.freeze([
         },
         image: 'src/assets/images/clothes/brown-shoe.png',
         reverse: false,
+        key: 2,
       },
     ],
   },
   {
+    key: 1,
     title: 'Madrinhas',
     content: [
       {
@@ -58,10 +63,12 @@ export default Object.freeze([
         },
         image: 'src/assets/images/clothes/dark-green-dress.png',
         reverse: true,
+        key: 0,
       },
     ],
   },
   {
+    key: 2,
     title: 'Damas',
     content: [
       {
@@ -76,6 +83,7 @@ export default Object.freeze([
         },
         image: 'src/assets/images/clothes/light-green-dress.png',
         reverse: false,
+        key: 0,
       },
     ],
   },
