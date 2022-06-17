@@ -23,7 +23,6 @@ const slideIn = (gsap, elem, trigger, { reverse }) => {
       duration: 1.5,
       scrollTrigger: {
         trigger: trigger || elem,
-        // start: 'top',
       },
     },
   )

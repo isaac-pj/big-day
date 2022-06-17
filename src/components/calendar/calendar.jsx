@@ -1,11 +1,17 @@
 import { addDays, isBefore } from "date-fns";
 import { format } from "date-fns/esm";
 import ptBR from "date-fns/locale/pt-BR";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import "./calendar.style.scss";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const Calendar = ({ bigDay }) => {
-  const [currentDate, setCurrentDate] = useState(new Date().setHours(16));
+  const calendarRef = useRef(null);
+  const today = new Date();
+  const [currentDate, setCurrentDate] = useState(today.setHours(16));
 
   const day = format(currentDate, "dd");
   const month = format(currentDate, "MMMM", { locale: ptBR });
@@ -13,8 +19,24 @@ const Calendar = ({ bigDay }) => {
   const time = format(bigDay, "HH:mm");
 
   useEffect(() => {
-    const intervalId = rollDate();
-    return () => clearInterval(intervalId);
+    const interval = { id: null };
+    const calendarElem = calendarRef?.current;
+
+    ScrollTrigger.create({
+      trigger: calendarElem,
+      start: "top 400px",
+      // markers: true,
+      scrub: true,
+      onEnter: () => {
+        interval.id = rollDate();
+      },
+      onLeaveBack: () => {
+        clearInterval(interval.id);
+        setCurrentDate(today);
+      },
+    });
+
+    return () => clearInterval(interval.id);
   }, []);
 
   const rollDate = () => {
@@ -27,7 +49,7 @@ const Calendar = ({ bigDay }) => {
   };
 
   return (
-    <div className="Calendar">
+    <div ref={calendarRef} className="Calendar">
       <header className="Calendar__header">
         <div className="Calendar__brackets">
           <div className="Calendar__hole">
