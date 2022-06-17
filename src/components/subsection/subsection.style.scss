@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
   align-self: stretch;
-  padding: 150px 50px;
+  padding: 150px 0;
   gap: 10px;
 
   &__info {
