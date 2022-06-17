@@ -14,7 +14,6 @@ const ColorPallete = (props, ref) => {
     const color = `${NAME}: HEX: (${HEX}) CMYK: (${CMYK})`;
     navigator.clipboard.writeText(color);
     toastRef.current.showToast(3000);
-    // console.log("copy to clipboard");
   };
 
   return (
