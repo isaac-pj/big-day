@@ -9,9 +9,33 @@
   padding: 100px 0;
   gap: 100px;
 
+  &__imageFrame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__imageTextBackOne,
+  &__imageTextBackTwo,
+  &__imageTextBackThree {
+    width: 300%;
+    opacity: 0.04;
+    position: absolute;
+  }
+
+  &__imageTextBackOne {
+    bottom: 50px;
+    left: -50px;
+  }
+
+  &__imageTextBackThree {
+    top: 50px;
+    right: -50px;
+  }
+
   &__imageText {
     width: 70%;
-    background-color: var(--off-white);
   }
 
   &__scrollButtom {
@@ -58,17 +82,5 @@
       position: absolute;
       bottom: 100px;
     }
-
-    // @keyframes pulse {
-    //   from {
-    //     transform: scale(0.7);
-    //   }
-    //   50% {
-    //     transform: scale(0.8);
-    //   }
-    //   to {
-    //     transform: scale(0.7);
-    //   }
-    // }
   }
 }
