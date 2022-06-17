@@ -59,16 +59,16 @@
       bottom: 100px;
     }
 
-    @keyframes pulse {
-      from {
-        transform: scale(0.7);
-      }
-      50% {
-        transform: scale(0.8);
-      }
-      to {
-        transform: scale(0.7);
-      }
-    }
+    // @keyframes pulse {
+    //   from {
+    //     transform: scale(0.7);
+    //   }
+    //   50% {
+    //     transform: scale(0.8);
+    //   }
+    //   to {
+    //     transform: scale(0.7);
+    //   }
+    // }
   }
 }
