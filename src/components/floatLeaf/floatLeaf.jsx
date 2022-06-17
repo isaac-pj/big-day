@@ -10,7 +10,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const FloatLeaf = ({ id, url, reverse, position, scrub, transform }) => {
+const FloatLeaf = ({ id, url, reverse, flip, position, scrub, transform }) => {
   const isMobile = useIsMobile();
   const floatImageRef = useRef(null);
   const { desktop, mobile } = position;
@@ -24,7 +24,7 @@ const FloatLeaf = ({ id, url, reverse, position, scrub, transform }) => {
     <img
       id={id}
       ref={floatImageRef}
-      className={classNames("FloatLeaf", { reverse: reverse })}
+      className={classNames("FloatLeaf", { reverse: reverse }, { flip: flip })}
       src={url || "src/assets/images/euca.png"}
       alt="Ramo de eucalipto"
       style={isMobile ? { ...mobile } : { ...desktop }}

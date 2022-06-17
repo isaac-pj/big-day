@@ -10,6 +10,14 @@
   transform: rotateZ(180deg);
 }
 
+.FloatLeaf.flip {
+  transform: scaleY(-1);
+}
+
+.FloatLeaf.reverse.flip {
+  transform: rotate(180deg) scaleY(-1);
+}
+
 @include sm {
   .FloatLeaf {
     max-width: 120%;
