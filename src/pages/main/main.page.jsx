@@ -1,16 +1,17 @@
 import React from "react";
 import "./main.style.scss";
-import Button from "../../components/button/button";
+import GroupLeaves from "../../containers/groupLeaves/groupLeaves";
+import SectionColors from "../../containers/sectionColors/SectionColors";
+import SectionInfo from "../../containers/sectionInfo/sectionInfo";
+import SectionDate from "../../containers/sectionDate/sectionDate";
+import SectionCover from "../../containers/sectionCover/sectionCover";
+import SectionDressCode from "../../containers/sectionDressCode/sectionDressCode";
 import Footer from "../../components/footer/footer";
+import Button from "../../components/button/button";
 import { BUTTON_TYPES } from "../../constants/general";
-import SectionColors from "../../components/sectionColors/SectionColors";
-import SectionInfo from "../../components/sectionInfo/sectionInfo";
-import SectionDate from "../../components/sectionDate/sectionDate";
-import SectionCover from "../../components/sectionCover/sectionCover";
+
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import SectionDressCode from "../../components/sectionDressCode/sectionDressCode";
-import GroupLeaves from "../../components/groupLeaves/groupLeaves";
 gsap.registerPlugin(ScrollToPlugin);
 
 const MainPage = () => {

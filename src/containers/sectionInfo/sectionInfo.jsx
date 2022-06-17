@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "../section/section";
+import Section from "../../components/section/section";
 import "./sectionInfo.style.scss";
 
 const data = [

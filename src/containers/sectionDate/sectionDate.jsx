@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { differenceInDays, intervalToDuration, isPast } from "date-fns";
 import { BUTTON_TYPES } from "../../constants/general";
-import Button from "../button/button";
-import Calendar from "../calendar/calendar";
-import Section from "../section/section";
+import Button from "../../components/button/button";
+import Calendar from "../../components/calendar/calendar";
+import Section from "../../components/section/section";
 import "./sectionDate.style.scss";
 import { addLeftZero } from "../../utils/timeUtils";
 

@@ -1,7 +1,7 @@
 import React from "react";
 // import "./groupLeaves.style.scss";
 import dataLeaves from "./groupLeaves.data";
-import FloatLeaf from "../floatLeaf/floatLeaf";
+import FloatLeaf from "../../components/floatLeaf/floatLeaf";
 
 const GroupLeaves = () => {
   const _renderLeaves = (leaves) => {

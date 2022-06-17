@@ -1,8 +1,8 @@
-import React, { forwardRef, useRef } from "react";
+import React, { useRef } from "react";
 import { BUTTON_TYPES } from "../../constants/general";
-import Button from "../button/button";
-import ColorPallete from "../colorPallete/colorPallete";
-import Section from "../section/section";
+import Button from "../../components/button/button";
+import ColorPallete from "../../components/colorPallete/colorPallete";
+import Section from "../../components/section/section";
 import printJS from "print-js";
 import "./sectionColors.style.scss";
 

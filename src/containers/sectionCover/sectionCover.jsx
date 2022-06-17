@@ -1,6 +1,6 @@
 import React from "react";
 import "./sectionCover.style.scss";
-import Section from "../section/section";
+import Section from "../../components/section/section";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
