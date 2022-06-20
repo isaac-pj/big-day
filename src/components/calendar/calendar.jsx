@@ -1,4 +1,4 @@
-import { addDays, isBefore } from "date-fns";
+import { addDays, differenceInDays, isBefore } from "date-fns";
 import { format } from "date-fns/esm";
 import ptBR from "date-fns/locale/pt-BR";
 import React, { memo, useEffect, useRef, useState } from "react";
@@ -17,6 +17,13 @@ const Calendar = ({ bigDay }) => {
   const month = format(currentDate, "MMMM", { locale: ptBR });
   const year = format(currentDate, "yyyy");
   const time = format(bigDay, "HH:mm");
+
+  const getUpdateTime = () => {
+    const remaningDays = differenceInDays(bigDay, today);
+    return (50 * 50) / remaningDays;
+  };
+
+  const updateTime = getUpdateTime();
 
   useEffect(() => {
     const interval = { id: null };
@@ -45,7 +52,7 @@ const Calendar = ({ bigDay }) => {
       setCurrentDate((prevDate) => {
         return isBefore(prevDate, bigDay) ? addDays(prevDate, 1) : prevDate;
       });
-    }, 40);
+    }, updateTime);
   };
 
   return (
