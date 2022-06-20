@@ -38,14 +38,23 @@
 .FAB {
   width: 56px;
   height: 56px;
+  z-index: 1001;
   position: absolute;
   right: 64px;
   bottom: 32px;
   border-radius: 28px;
+  // transition: all 0.5s;
+  // transform: scale(0);
+  // opacity: 0;
   // zoom: 1.33;
 
   @include sm {
     right: 16px;
     bottom: 16px;
   }
+}
+
+.FAB.locked {
+  position: fixed;
+  // right: 48px;
 }
