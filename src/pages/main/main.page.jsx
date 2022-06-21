@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./main.style.scss";
 import GroupLeaves from "../../containers/groupLeaves/groupLeaves";
-import SectionColors from "../../containers/sectionColors/SectionColors";
+// import SectionColors from "../../containers/sectionColors/SectionColors";
 import SectionInfo from "../../containers/sectionInfo/sectionInfo";
 import SectionDate from "../../containers/sectionDate/sectionDate";
 import SectionCover from "../../containers/sectionCover/sectionCover";
@@ -62,7 +62,7 @@ const MainPage = () => {
       <div id="content" className="MainPage__content">
         <GroupLeaves />
         <SectionCover />
-        <SectionColors />
+        {/* <SectionColors /> */}
         <SectionDressCode />
         <SectionDate />
         <SectionInfo />
