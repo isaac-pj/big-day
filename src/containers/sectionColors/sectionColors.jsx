@@ -7,16 +7,19 @@ import Section from "../../components/section/section";
 import useIsMobile from "../../hooks/useIsMobile";
 import printJS from "print-js";
 
+// *** IMPORT ASSETS ***
+import pdfPallete from "../../assets/docs/pallete.pdf";
+
 const SectionColors = () => {
   const isMobile = useIsMobile();
   const colorPalleteRef = useRef(null);
 
   const handlePrintClick = (event, { current }) => {
-    printJS("src/assets/docs/pallete.pdf");
+    printJS(pdfPallete);
   };
 
   const handleSaveClick = (event, { current }) => {
-    window.open("src/assets/docs/pallete.pdf", "_blank");
+    window.open(pdfPallete, "_blank");
   };
 
   return (

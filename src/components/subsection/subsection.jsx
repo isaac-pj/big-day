@@ -29,6 +29,10 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
     });
   }, []);
 
+  const getImageUrl = (path) => {
+    return new URL(`../../assets/images/clothes/${path}`, import.meta.url).href;
+  };
+
   const handleCopyColor = (event, { name, hex, cmyk }) => {
     const color = `${name}: HEX: (${hex}) CMYK: (${cmyk})`;
     navigator.clipboard.writeText(color);
@@ -48,7 +52,7 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
       <img
         ref={imageRef}
         className="Subsection__image"
-        src={image}
+        src={getImageUrl(image)}
         alt={title}
       />
       <div ref={infoRef} data-reverse={reverse} className="Subsection__info">

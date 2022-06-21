@@ -7,6 +7,10 @@ import Icon from "../../components/icon/Icon";
 import useIsMobile from "../../hooks/useIsMobile";
 gsap.registerPlugin(ScrollToPlugin);
 
+// *** IMPORT ASSETS ***
+import imgMouseWheel from "../../assets/images/mouse-wheel.webp";
+import imgCover from "../../assets/images/cover.svg";
+
 const SectionCover = () => {
   const isMobile = useIsMobile();
 
@@ -20,12 +24,12 @@ const SectionCover = () => {
         <div className="SectionCover__imageFrame">
           <img
             className="SectionCover__imageTextBack"
-            src="src/assets/images/cover.svg"
+            src={imgCover}
             alt="image back"
           />
           <img
             className="SectionCover__imageText"
-            src="src/assets/images/cover.svg"
+            src={imgCover}
             alt="Partícipes"
           />
         </div>
@@ -33,9 +37,7 @@ const SectionCover = () => {
           className="SectionCover__scrollButtom"
           onClick={handleScrollClick}
         >
-          {!isMobile && (
-            <img src="src/assets/images/mouse-wheel.webp" alt="mouse wheel" />
-          )}
+          {!isMobile && <img src={imgMouseWheel} alt="mouse wheel" />}
           {isMobile && (
             <Icon name={"swipe_up"} size={48} color="var(--text-dark)" />
           )}
