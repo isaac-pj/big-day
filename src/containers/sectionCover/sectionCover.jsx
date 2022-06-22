@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 // *** IMPORT ASSETS ***
 import imgMouseWheel from "../../assets/images/mouse-wheel.webp";
+import imgCoverBackground from "../../assets/images/cover-background.svg";
 import imgCover from "../../assets/images/cover.svg";
 
 const SectionCover = () => {
@@ -24,7 +25,7 @@ const SectionCover = () => {
         <div className="SectionCover__imageFrame">
           <img
             className="SectionCover__imageTextBack"
-            src={imgCover}
+            src={imgCoverBackground}
             alt="image back"
           />
           <img
@@ -34,7 +35,7 @@ const SectionCover = () => {
           />
         </div>
         <button
-          className="SectionCover__scrollButtom"
+          className="SectionCover__scrollButton"
           onClick={handleScrollClick}
         >
           {!isMobile && <img src={imgMouseWheel} alt="mouse wheel" />}

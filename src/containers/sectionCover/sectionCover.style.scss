@@ -17,7 +17,7 @@
   }
 
   &__imageTextBack {
-    width: 300%;
+    width: 500%;
     opacity: 0.04;
     position: absolute;
   }
@@ -26,7 +26,7 @@
     width: 70%;
   }
 
-  &__scrollButtom {
+  &__scrollButton {
     background-color: var(--off-white);
     cursor: pointer;
     border: none;
@@ -38,7 +38,7 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    &__scrollButtom {
+    &__scrollButton {
       animation: pulse infinite 1s linear;
     }
   }
@@ -63,16 +63,21 @@
     gap: 20px;
 
     &__imageTextBack {
-      width: 500%;
+      width: 700%;
     }
 
     &__imageText {
       width: 100%;
     }
 
-    &__scrollButtom {
+    &__scrollButton {
       position: absolute;
       bottom: 100px;
+      background-color: transparent;
+
+      span {
+        background-color: initial;
+      }
     }
   }
 }
