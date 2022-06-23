@@ -12,24 +12,32 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 // *** IMPORT ASSETS ***
 import imgEuca from "../../assets/images/euca.png";
 
-const FloatLeaf = ({ id, url, reverse, flip, position, scrub, transform }) => {
+const FloatLeaf = ({ mobile, ...desktop }) => {
   const isMobile = useIsMobile();
   const floatImageRef = useRef(null);
-  const { desktop, mobile } = position;
+  const params = isMobile ? { ...desktop, ...mobile } : { ...desktop };
+  const { id, reverse, flipX, flipY, position } = params;
+
+  // console.log(position);
 
   useEffect(() => {
     const floatImageElem = floatImageRef?.current;
-    animations.parallaxDown(gsap, floatImageElem, scrub, transform);
+    animations.parallaxDown(gsap, floatImageElem, params);
   }, []);
 
   return (
     <img
       id={id}
       ref={floatImageRef}
-      className={classNames("FloatLeaf", { reverse: reverse }, { flip: flip })}
-      src={url || imgEuca}
+      className={classNames(
+        "FloatLeaf",
+        { reverse: reverse },
+        { flipX: flipX },
+        { flipY: flipY }
+      )}
+      src={imgEuca}
       alt="Ramo de eucalipto"
-      style={isMobile ? { ...mobile } : { ...desktop }}
+      style={{ ...position }}
     />
   );
 };

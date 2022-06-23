@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "./main.style.scss";
 import GroupLeaves from "../../containers/groupLeaves/groupLeaves";
-// import SectionColors from "../../containers/sectionColors/SectionColors";
+import SectionColors from "../../containers/sectionColors/SectionColors";
 import SectionInfo from "../../containers/sectionInfo/sectionInfo";
 import SectionDate from "../../containers/sectionDate/sectionDate";
 import SectionCover from "../../containers/sectionCover/sectionCover";
@@ -19,39 +19,56 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 const MainPage = () => {
   const isMobile = useIsMobile();
   const buttonRef = useRef();
+  const query = gsap.utils.selector(document.body);
 
   useEffect(() => {
+    handlePinButton();
+  }, []);
+
+  const handlePinButton = () => {
     const buttonElem = buttonRef.current;
-    // console.log(buttonElem);
+    const [colorsElem] = query("#colors");
+    const [contentElem] = query("#content");
+
+    console.log("colors posY", colorsElem.offsetTop);
+    console.log("content height", contentElem.offsetHeight);
+    console.log("window height", window.innerHeight);
+
+    const start = getStartPos(colorsElem, contentElem);
+    const end = getEndPos();
+    console.log(start, end);
+
     gsap.fromTo(
       buttonElem,
       {
-        // scale: 0,
         opacity: 0,
         duration: 0.5,
       },
       {
-        // scale: 1,
         opacity: 1,
         duration: 0.5,
         scrollTrigger: {
-          // trigger: "#colors",
           trigger: buttonElem,
           toggleClass: "locked",
           toggleActions: "restart none none reverse",
-          start: () =>
-            `${
-              document.getElementById("colors").offsetTop +
-              (isMobile ? 76 : 92) -
-              document.getElementById("content").offsetHeight
-            }px top`,
-          end: () => `bottom ${window.innerHeight - (isMobile ? 16 : 32)}px`,
+          start: start,
+          end: end,
           // pin: true,
-          // markers: true,
+          markers: true,
         },
       }
     );
-  }, []);
+  };
+
+  const getStartPos = ({ offsetTop }, { offsetHeight }) => {
+    const buttonOffSetBottom = isMobile ? 76 : 92;
+    return `${offsetTop + buttonOffSetBottom - offsetHeight}px top`;
+  };
+
+  const getEndPos = () => {
+    const buttonPositionBottom = isMobile ? 16 : 32;
+    return `bottom ${window.innerHeight - buttonPositionBottom}px`;
+  };
 
   const handleGoTop = () => {
     gsap.to(window, { duration: 2, scrollTo: 0 });
@@ -62,7 +79,7 @@ const MainPage = () => {
       <div id="content" className="MainPage__content">
         <GroupLeaves />
         <SectionCover />
-        {/* <SectionColors /> */}
+        <SectionColors />
         <SectionDressCode />
         <SectionDate />
         <SectionInfo />

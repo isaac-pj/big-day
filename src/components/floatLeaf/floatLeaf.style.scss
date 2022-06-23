@@ -2,20 +2,20 @@
 
 .FloatLeaf {
   position: absolute;
-  max-width: 60%;
+  max-width: 1000px;
   z-index: 999;
+}
+
+.FloatLeaf.flipX {
+  transform: rotateY(180deg);
+}
+
+.FloatLeaf.flipY {
+  transform: rotateX(180deg);
 }
 
 .FloatLeaf.reverse {
   transform: rotateZ(180deg);
-}
-
-.FloatLeaf.flip {
-  transform: scaleY(-1);
-}
-
-.FloatLeaf.reverse.flip {
-  transform: rotate(180deg) scaleY(-1);
 }
 
 @include sm {
