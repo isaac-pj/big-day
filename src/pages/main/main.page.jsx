@@ -28,16 +28,9 @@ const MainPage = () => {
   const handlePinButton = () => {
     const buttonElem = buttonRef.current;
     const [colorsElem] = query("#colors");
-    const [contentElem] = query("#content");
 
-    // console.log("colors posY", colorsElem.offsetTop);
-    // console.log("content height", contentElem.offsetHeight);
-    // console.log("window height", window.innerHeight);
-
-    const start = getStartPos(colorsElem, contentElem);
+    const start = getStartPos(colorsElem, buttonElem);
     const end = getEndPos();
-    // console.log(buttonElem.offsetTop); // can be replace contentElem.offsetHeight
-    // console.log(start, end);
 
     gsap.fromTo(
       buttonElem,
@@ -61,9 +54,8 @@ const MainPage = () => {
     );
   };
 
-  const getStartPos = ({ offsetTop }, { offsetHeight }) => {
-    const buttonOffSetBottom = isMobile ? 76 : 92;
-    return `${offsetTop + buttonOffSetBottom - offsetHeight}px top`;
+  const getStartPos = (colorsElem, buttonElem) => {
+    return `${colorsElem?.offsetTop - buttonElem?.offsetTop}px top`;
   };
 
   const getEndPos = () => {
