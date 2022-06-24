@@ -8,7 +8,7 @@ const scaleUp = (gsap, elem, trigger) => {
       duration: 1.5,
       scrollTrigger: {
         trigger: trigger || elem,
-        toggleActions: 'restart none none none',
+        toggleActions: 'restart none none reverse',
       },
     },
   )
@@ -24,7 +24,7 @@ const slideIn = (gsap, elem, trigger, { reverse }) => {
       duration: 1.5,
       scrollTrigger: {
         trigger: trigger || elem,
-        toggleActions: 'restart none none none',
+        toggleActions: 'restart none none reverse',
       },
     },
   )

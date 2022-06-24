@@ -30,13 +30,14 @@ const MainPage = () => {
     const [colorsElem] = query("#colors");
     const [contentElem] = query("#content");
 
-    console.log("colors posY", colorsElem.offsetTop);
-    console.log("content height", contentElem.offsetHeight);
-    console.log("window height", window.innerHeight);
+    // console.log("colors posY", colorsElem.offsetTop);
+    // console.log("content height", contentElem.offsetHeight);
+    // console.log("window height", window.innerHeight);
 
     const start = getStartPos(colorsElem, contentElem);
     const end = getEndPos();
-    console.log(start, end);
+    // console.log(buttonElem.offsetTop); // can be replace contentElem.offsetHeight
+    // console.log(start, end);
 
     gsap.fromTo(
       buttonElem,
@@ -54,7 +55,7 @@ const MainPage = () => {
           start: start,
           end: end,
           // pin: true,
-          markers: true,
+          // markers: true,
         },
       }
     );
