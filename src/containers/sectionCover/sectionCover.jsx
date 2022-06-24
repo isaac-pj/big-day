@@ -43,12 +43,7 @@ const SectionCover = () => {
           onClick={handleScrollClick}
         >
           {!isMobile && (
-            <img
-              src={imgMouseWheel}
-              width="100%"
-              height="80"
-              alt="mouse wheel"
-            />
+            <img src={imgMouseWheel} height="80" width="34" alt="mouse wheel" />
           )}
           {isMobile && (
             <Icon name={"swipe_up"} size={48} color="var(--text-dark)" />
