@@ -60,6 +60,7 @@
   img {
     user-select: none;
     pointer-events: none;
+    aspect-ratio: auto;
   }
 
   body::-webkit-scrollbar {

@@ -24,6 +24,8 @@ const SectionCover = () => {
       <div className="SectionCover">
         <div className="SectionCover__imageFrame">
           <img
+            width="3356"
+            height="1192"
             className="SectionCover__imageTextBack"
             src={imgCoverBackground}
             alt="image back"
@@ -31,6 +33,8 @@ const SectionCover = () => {
           <img
             className="SectionCover__imageText"
             src={imgCover}
+            width="670"
+            height="378"
             alt="Partícipes"
           />
         </div>
@@ -38,7 +42,14 @@ const SectionCover = () => {
           className="SectionCover__scrollButton"
           onClick={handleScrollClick}
         >
-          {!isMobile && <img src={imgMouseWheel} alt="mouse wheel" />}
+          {!isMobile && (
+            <img
+              src={imgMouseWheel}
+              width="100%"
+              height="80"
+              alt="mouse wheel"
+            />
+          )}
           {isMobile && (
             <Icon name={"swipe_up"} size={48} color="var(--text-dark)" />
           )}

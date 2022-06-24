@@ -50,6 +50,8 @@ const SectionInfo = () => {
                 className="SectionInfo__cardImage"
                 src={getImageUrl(img)}
                 alt={text}
+                height="136"
+                width="136"
               />
               <div className="SectionInfo__textFrame">
                 <h5 className="SectionInfo__cardText">{text}</h5>

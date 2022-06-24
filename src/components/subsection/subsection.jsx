@@ -16,6 +16,7 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
   const imageRef = useRef(null);
   const infoRef = useRef(null);
   const isMobile = useIsMobile();
+  const { src, height, width } = image;
 
   useEffect(() => {
     const imageElem = imageRef.current;
@@ -52,7 +53,9 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
       <img
         ref={imageRef}
         className="Subsection__image"
-        src={getImageUrl(image)}
+        height={height}
+        width={width}
+        src={getImageUrl(src)}
         alt={title}
       />
       <div ref={infoRef} data-reverse={reverse} className="Subsection__info">
