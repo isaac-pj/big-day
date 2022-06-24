@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "../../components/section/section";
+import useIsMobile from "../../hooks/useIsMobile";
 import "./sectionInfo.style.scss";
 
 const data = [
@@ -24,6 +25,8 @@ const data = [
 ];
 
 const SectionInfo = () => {
+  const isMobile = useIsMobile();
+
   const handleOnClick = (url) => {
     window.open(url, "_blank");
   };
@@ -50,8 +53,8 @@ const SectionInfo = () => {
                 className="SectionInfo__cardImage"
                 src={getImageUrl(img)}
                 alt={text}
-                height="136"
-                width="136"
+                height={isMobile ? 68 : 136}
+                width={isMobile ? 68 : 136}
               />
               <div className="SectionInfo__textFrame">
                 <h5 className="SectionInfo__cardText">{text}</h5>
