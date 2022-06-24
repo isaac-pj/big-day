@@ -1,4 +1,4 @@
-export default [
+export const normalLeaves = [
   {
     id: 'leaf01',
     url: null,
@@ -8,6 +8,8 @@ export default [
     scrub: 3,
     start: '300px top',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     transform: {
       x: 100,
       y: -200,
@@ -32,6 +34,8 @@ export default [
     scrub: 3,
     start: 'top 350px',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     transform: {
       x: 100,
       y: -300,
@@ -41,7 +45,7 @@ export default [
       left: -700,
     },
     mobile: {
-      position: { top: 600, left: -300 },
+      position: { top: 500, left: -300 },
       start: 'top 580px',
       end: 'bottom top',
     },
@@ -55,6 +59,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     transform: {
       x: -50,
       y: -500,
@@ -78,6 +84,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     transform: {
       x: 100,
       y: -500,
@@ -88,7 +96,7 @@ export default [
       left: -800,
     },
     mobile: {
-      position: { top: 3500, left: -400 },
+      position: { top: 3500, left: -380 },
       start: 'top bottom',
       end: 'bottom top',
     },
@@ -102,6 +110,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     transform: {
       x: 100,
       y: -300,
@@ -125,6 +135,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     position: {
       top: 7800,
       left: -700,
@@ -148,6 +160,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     position: {
       top: 9200,
       right: -500,
@@ -171,6 +185,8 @@ export default [
     scrub: 3,
     start: 'top bottom',
     end: 'bottom top',
+    width: 1023,
+    height: 760,
     position: {
       top: 10500,
       left: -600,
@@ -186,3 +202,84 @@ export default [
     },
   },
 ]
+
+export const flatLeaves = [
+  {
+    id: 'leaf09',
+    url: 'assets/images/euca-base.png',
+    flipX: false,
+    flipY: false,
+    reverse: false,
+    scrub: 3,
+    start: 'top bottom',
+    end: 'bottom top',
+    width: 1023,
+    height: 760,
+    transform: {
+      x: 100,
+      y: -500,
+      rotateZ: -5,
+    },
+    position: {
+      top: 1000,
+      left: -400,
+    },
+    mobile: {
+      position: { top: 900, right: -200 },
+      start: 'top bottom',
+      end: 'bottom top',
+    },
+  },
+  {
+    id: 'leaf10',
+    url: 'assets/images/euca-base.png',
+    flipX: false,
+    flipY: false,
+    reverse: true,
+    scrub: 3,
+    start: 'top bottom',
+    end: 'bottom top',
+    width: 1023,
+    height: 760,
+    transform: {
+      x: 100,
+      y: -300,
+    },
+    position: {
+      top: 2800,
+      left: -300,
+    },
+    mobile: {
+      position: { top: 2500, left: -250 },
+      start: 'top bottom',
+      end: 'bottom top',
+    },
+  },
+  {
+    id: 'leaf11',
+    url: 'assets/images/euca-base.png',
+    flipX: false,
+    flipY: false,
+    reverse: false,
+    scrub: 3,
+    start: 'top bottom',
+    end: 'bottom top',
+    width: 1023,
+    height: 760,
+    position: {
+      top: 4800,
+      right: -500,
+    },
+    transform: {
+      x: -50,
+      y: -1000,
+    },
+    mobile: {
+      position: { top: 4400, right: -320 },
+      start: 'top bottom',
+      end: 'bottom top',
+    },
+  },
+]
+
+export default [...normalLeaves, ...flatLeaves]
