@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npm run dev",
-    "host": "vite --host",
     "dev": "vite",
+    "dev:host": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:host": "vite preview --host"
   },
   "dependencies": {
     "date-fns": "^2.28.0",
