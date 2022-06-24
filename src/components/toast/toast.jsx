@@ -5,11 +5,11 @@ import "./toast.style.scss";
 const Toast = ({ message, children, timeout }, ref) => {
   const [visibility, setVisibility] = useState(false);
 
-  const showToast = () => {
+  const showToast = (customTimeout) => {
     setVisibility(true);
     return setTimeout(() => {
       setVisibility(false);
-    }, timeout);
+    }, customTimeout || timeout);
   };
 
   useImperativeHandle(ref, () => {
