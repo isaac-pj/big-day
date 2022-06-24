@@ -8,14 +8,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Toast from "../toast/toast";
 import * as animations from "./subsection.gsap";
+import useHasPermission from "../../hooks/useHasPermission";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Subsection = ({ title, image, description, alert, colors, reverse }) => {
-  const toastRef = useRef(null);
+  const toastSuccessRef = useRef(null);
+  const toastFailRef = useRef(null);
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const infoRef = useRef(null);
   const isMobile = useIsMobile();
+  const hasPermission = useHasPermission("clipboard-write");
   const { src, height, width } = image;
 
   useEffect(() => {
@@ -36,8 +39,11 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
 
   const handleCopyColor = (event, { name, hex, cmyk }) => {
     const color = `${name}: HEX: (${hex}) CMYK: (${cmyk})`;
-    navigator.clipboard.writeText(color);
-    toastRef.current.showToast();
+    if (!hasPermission) return;
+    navigator.clipboard.writeText(color).then(
+      () => toastSuccessRef.current.showToast(),
+      () => toastFailRef.current.showToast()
+    );
   };
 
   const handlePrintPallete = () => {
@@ -80,8 +86,13 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
         </div>
       </div>
       <Toast
-        ref={toastRef}
+        ref={toastSuccessRef}
         message=":) A cor foi copiada com sucesso!"
+        timeout={3000}
+      />
+      <Toast
+        ref={toastFailRef}
+        message=":( Desculpe, houve um erro ao copiar!"
         timeout={3000}
       />
     </div>
