@@ -13,14 +13,16 @@ const ColorPallete = (props, ref) => {
   const toastFailRef = useRef(null);
   const hasPermission = useHasPermission("clipboard-write");
 
-  const handleClickColor = (event, { HEX, CMYK, NAME }) => {
+  const handleClickColor = async (event, { HEX, CMYK, NAME }) => {
     const color = `${NAME}: HEX: (${HEX}) CMYK: (${CMYK})`;
 
     if (!hasPermission) return;
-    navigator.clipboard.writeText(color).then(
-      () => toastSuccessRef.current.showToast(),
-      () => toastFailRef.current.showToast()
-    );
+    try {
+      await navigator.clipboard.writeText(color);
+      toastSuccessRef.current.showToast();
+    } catch (err) {
+      toastFailRef.current.showToast();
+    }
   };
 
   return (

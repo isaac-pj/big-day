@@ -37,13 +37,15 @@ const Subsection = ({ title, image, description, alert, colors, reverse }) => {
     return new URL(`../../assets/images/clothes/${path}`, import.meta.url).href;
   };
 
-  const handleCopyColor = (event, { name, hex, cmyk }) => {
+  const handleCopyColor = async (event, { name, hex, cmyk }) => {
     const color = `${name}: HEX: (${hex}) CMYK: (${cmyk})`;
     if (!hasPermission) return;
-    navigator.clipboard.writeText(color).then(
-      () => toastSuccessRef.current.showToast(),
-      () => toastFailRef.current.showToast()
-    );
+    try {
+      await navigator.clipboard.writeText(color);
+      toastSuccessRef.current.showToast();
+    } catch (err) {
+      toastFailRef.current.showToast();
+    }
   };
 
   const handlePrintPallete = () => {
