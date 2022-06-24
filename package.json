@@ -25,6 +25,7 @@
     "classnames": "^2.3.1",
     "netlify-cli": "^10.5.1",
     "sass": "^1.52.1",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-fonts": "^0.4.0"
   }
 }
