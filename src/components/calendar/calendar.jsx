@@ -35,7 +35,7 @@ const Calendar = ({ bigDay }) => {
     ScrollTrigger.create({
       trigger: calendarElem,
       start: start,
-      markers: true,
+      // markers: true,
       // scrub: true,
       onEnter: () => {
         interval.id = rollDate();
