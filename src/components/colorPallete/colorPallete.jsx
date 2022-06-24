@@ -1,19 +1,26 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import {
   COLOR_PALLETE,
   COLOR_PALLETE_STYLE,
   PALLETE,
 } from "../../constants/general";
+import useHasPermission from "../../hooks/useHasPermission";
 import Toast from "../toast/toast";
 import "./colorPallete.style.scss";
 
 const ColorPallete = (props, ref) => {
-  const toastRef = useRef(null);
+  const toastSuccessRef = useRef(null);
+  const toastFailRef = useRef(null);
+  const hasPermission = useHasPermission("clipboard-write");
 
   const handleClickColor = (event, { HEX, CMYK, NAME }) => {
     const color = `${NAME}: HEX: (${HEX}) CMYK: (${CMYK})`;
-    navigator.clipboard.writeText(color);
-    toastRef.current.showToast(3000);
+
+    if (!hasPermission) return;
+    navigator.clipboard.writeText(color).then(
+      () => toastSuccessRef.current.showToast(),
+      () => toastFailRef.current.showToast()
+    );
   };
 
   return (
@@ -48,8 +55,13 @@ const ColorPallete = (props, ref) => {
         </span>
       </div>
       <Toast
-        ref={toastRef}
+        ref={toastSuccessRef}
         message=":) A cor foi copiada com sucesso!"
+        timeout={3000}
+      />
+      <Toast
+        ref={toastFailRef}
+        message=":( Desculpe, houve um erro ao copiar!"
         timeout={3000}
       />
     </div>
