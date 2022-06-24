@@ -6,11 +6,13 @@ import "./calendar.style.scss";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useIsMobile from "../../hooks/useIsMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 const Calendar = ({ bigDay }) => {
   const calendarRef = useRef(null);
   const today = new Date();
+  const isMobile = useIsMobile();
   const [currentDate, setCurrentDate] = useState(today.setHours(16));
 
   const day = format(currentDate, "dd");
@@ -28,12 +30,13 @@ const Calendar = ({ bigDay }) => {
   useEffect(() => {
     const interval = { id: null };
     const calendarElem = calendarRef?.current;
+    const start = isMobile ? "-100 500px" : "-300px 500px";
 
     ScrollTrigger.create({
       trigger: calendarElem,
-      start: "top 400px",
-      // markers: true,
-      scrub: true,
+      start: start,
+      markers: true,
+      // scrub: true,
       onEnter: () => {
         interval.id = rollDate();
       },

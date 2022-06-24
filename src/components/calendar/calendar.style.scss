@@ -102,6 +102,7 @@
 
 @include sm {
   .Calendar {
-    zoom: 0.7;
+    transform: scale(0.7);
+    margin: -65px 0;
   }
 }
