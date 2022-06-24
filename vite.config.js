@@ -16,6 +16,12 @@ export default defineConfig({
       custom: {
         families: [
           {
+            name: 'Material Symbols Outlined',
+            src:
+              './src/assets/fonts/Material_Icons/Material+Symbols+Outlined.woff2',
+            styles: 'opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200',
+          },
+          {
             name: 'Integral CF',
             local: 'Integral CF',
             src: './src/assets/fonts/IntegralCF/IntegralCF-Regular.ttf',
