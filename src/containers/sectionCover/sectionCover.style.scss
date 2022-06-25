@@ -1,0 +1,83 @@
+@import "../../styles/mixins.scss";
+
+.SectionCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 100px 0;
+  gap: 100px;
+
+  &__imageFrame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__imageTextBack {
+    width: 500%;
+    opacity: 0.04;
+    position: absolute;
+  }
+
+  &__imageText {
+    width: 100%;
+  }
+
+  &__scrollButton {
+    background-color: var(--off-white);
+    cursor: pointer;
+    border: none;
+
+    img {
+      mix-blend-mode: difference;
+      opacity: 0.85;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &__scrollButton {
+      animation: pulse infinite 1s linear;
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
+@include sm {
+  .SectionCover {
+    box-sizing: border-box;
+    padding: 20px 0;
+    gap: 20px;
+
+    &__imageTextBack {
+      width: 700%;
+    }
+
+    &__imageText {
+      width: 100%;
+    }
+
+    &__scrollButton {
+      position: absolute;
+      bottom: 100px;
+      background-color: transparent;
+
+      span {
+        background-color: initial;
+      }
+    }
+  }
+}

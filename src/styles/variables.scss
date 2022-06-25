@@ -1,0 +1,20 @@
+/* ---------- BREAKPOINTS ---------- */
+
+$width-breakpoints: (
+  "xxl": 1600px,
+  "xll": 1470px,
+  "xl": 1440px,
+  "lg": 1224px,
+  "sd": 1024px,
+  "md": 880px,
+  "sm": 760px,
+  "xs": 450px,
+);
+
+$screen-xs-max: 450px;
+$screen-sm-max: 760px;
+$screen-md-max: 880px;
+$screen-sd-max: 1024px;
+$screen-lg-max: 1224px;
+$screen-xl-max: 1440px;
+$screen-xll-max: 1470px;

@@ -1,0 +1,104 @@
+// @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+:root {
+  --green-dark: #799973;
+  --green-light: #a2cc99;
+  --off-white: #fffff2;
+  --gray-light: #e6f2f0;
+  --gray-dark: #c2ccca;
+  --text-dark: #333333;
+  --brown-mid: #936037;
+  --white: #ffffff;
+
+  .white {
+    background-color: var(--white);
+  }
+
+  .brown-mid {
+    background-color: var(--brown-mid);
+  }
+
+  .green-dark {
+    background-color: var(--green-dark);
+  }
+
+  .green-light {
+    background-color: var(--green-light);
+  }
+
+  .off-white {
+    background-color: var(--off-white);
+  }
+
+  .gray-light {
+    background-color: var(--gray-light);
+  }
+
+  .gray-dark {
+    background-color: var(--gray-dark);
+  }
+}
+
+:root {
+  color: var(--text-dark);
+
+  * {
+    font-family: "Montserrat", Calibri, sans-serif;
+    font-weight: 400;
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  }
+
+  img {
+    user-select: none;
+    pointer-events: none;
+    aspect-ratio: auto;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0px; /* width of the entire scrollbar */
+  }
+
+  body::-webkit-scrollbar-track {
+    background: orange; /* color of the tracking area */
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: blue; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid orange; /* creates padding around scroll thumb */
+  }
+}
+
+body {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: unset;
+  }
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    background-color: var(--off-white);
+  }
+}

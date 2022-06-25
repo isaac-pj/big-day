@@ -1,0 +1,19 @@
+.MainPage {
+  position: relative;
+  background-color: var(--off-white);
+  width: 100vw;
+
+  &__content {
+    // zoom: 0.67; // comment if use backgroud size
+    background-image: url(../../assets/images/texture.svg);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: 67vw; // comment if use the zoom
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    // background-blend-mode: difference;
+    // background-size: cover;
+  }
+}

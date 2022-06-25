@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+
+.FloatLeaf {
+  position: absolute;
+  max-width: 1000px;
+  z-index: 999;
+}
+
+.FloatLeaf.flipX {
+  transform: rotateY(180deg);
+}
+
+.FloatLeaf.flipY {
+  transform: rotateX(180deg);
+}
+
+.FloatLeaf.reverse {
+  transform: rotateZ(180deg);
+}
+
+@include sm {
+  .FloatLeaf {
+    max-width: 120%;
+    height: auto;
+  }
+}
