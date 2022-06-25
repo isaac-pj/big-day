@@ -39,7 +39,7 @@ const SectionInfo = () => {
     <Section title="Informações" id="info">
       <div className="SectionInfo">
         <p className="SectionInfo__text">
-          Por favor, chegar com <strong>30 min</strong> de antecedencia.
+          Por favor, chegar com <strong>30 min</strong> de antecedência.
           Agradecemos muito sua presença.
         </p>
         <div className="SectionInfo__bottomContent">
