@@ -222,7 +222,7 @@ export const flatLeaves = [
     },
     position: {
       top: 1000,
-      left: -400,
+      right: -400,
     },
     mobile: {
       position: { top: 900, right: -200 },
@@ -246,8 +246,8 @@ export const flatLeaves = [
       y: -300,
     },
     position: {
-      top: 2800,
-      left: -300,
+      top: 3000,
+      left: -500,
     },
     mobile: {
       position: { top: 2500, left: -250 },

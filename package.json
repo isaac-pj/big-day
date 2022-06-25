@@ -1,11 +1,12 @@
 {
   "name": "big-day-3007",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
     "dev:host": "vite --host",
+    "dev:force": "vite --force",
     "build": "vite build",
     "preview": "vite preview",
     "preview:host": "vite preview --host"

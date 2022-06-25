@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./main.style.scss";
 import GroupLeaves from "../../containers/groupLeaves/groupLeaves";
 import SectionColors from "../../containers/sectionColors/SectionColors";
