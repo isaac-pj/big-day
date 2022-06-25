@@ -24,7 +24,7 @@ const FloatLeaf = ({ mobile, url, ...desktop }) => {
   }, []);
 
   const getImageUrl = (path) => {
-    return new URL(`../../${path}`, import.meta.url).href;
+    return new URL(`../../assets/${path}`, import.meta.url).href;
   };
 
   return (

@@ -206,7 +206,7 @@ export const normalLeaves = [
 export const flatLeaves = [
   {
     id: 'leaf09',
-    url: 'assets/images/euca-base.png',
+    url: 'images/euca-base.png',
     flipX: false,
     flipY: false,
     reverse: false,
@@ -232,7 +232,7 @@ export const flatLeaves = [
   },
   {
     id: 'leaf10',
-    url: 'assets/images/euca-base.png',
+    url: 'images/euca-base.png',
     flipX: false,
     flipY: false,
     reverse: true,
@@ -257,7 +257,7 @@ export const flatLeaves = [
   },
   {
     id: 'leaf11',
-    url: 'assets/images/euca-base.png',
+    url: 'images/euca-base.png',
     flipX: false,
     flipY: false,
     reverse: false,
